@@ -19,7 +19,8 @@ export default class Form extends Component {
     submitRes = e => {
         e.preventDefault();
         const { addReservation } = this.props;
-        addReservation(this.state)
+        const newRes = {id: Date.now(), ...this.state}
+        addReservation(newRes);
         this.resetInputs();
     }
 
