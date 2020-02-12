@@ -1,5 +1,5 @@
-import react, { Component } from 'react';
-import './form.scss'
+import React, { Component } from 'react';
+import './Form.scss'
 
 export default class Form extends Component {
     constructor() {
@@ -12,7 +12,9 @@ export default class Form extends Component {
 
     render() {
         return (
-            
+            <form className='form'>
+
+            </form>
         )
     }
 }
