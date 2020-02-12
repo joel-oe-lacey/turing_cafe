@@ -17,7 +17,9 @@ exports[`Res Should match snapshot 1`] = `
   <p>
     Number of Guests: 42
   </p>
-  <button>
+  <button
+    onClick={[Function]}
+  >
     Cancel
   </button>
 </section>
