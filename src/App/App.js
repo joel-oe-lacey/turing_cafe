@@ -17,11 +17,15 @@ export default class App extends Component {
       .then(resData => this.setState({ reservations: resData }))
   }
 
+  addReservation = reservation => {
+    this.setState({reservations: [...this.state.reservations, reservation]})
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <Form />
+        <Form addReservation={this.addReservation} />
         <ResContainer reservations={this.state.reservations} />
       </div>
     )
