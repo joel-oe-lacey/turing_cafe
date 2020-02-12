@@ -33,6 +33,21 @@ export default class App extends Component {
       })
   }
 
+  deleteReservation = id => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    fetch(`http://localhost:3001/api/v1/reservations/${id}`, options)
+      .then(response => response.json())
+      .then(remainingRes => {
+        this.setState({ reservations: remainingRes })
+      })
+  }
+
   render() {
     return (
       <div className="App">
