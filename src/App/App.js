@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import Form from '../Form/Form';
+import ResContainer from '../ResContainer/ResContainer';
 import './App.scss';
 
 export default class App extends Component {
   constructor() {
     super()
     this.state = {
-
+      reservations: []
     }
   }
 
   componentDidMount() {
-    
+    fetch('http://localhost:3001/api/v1/reservations')
+      .then(response => response.json())
+      .then(resData => this.setState({ reservations: resData }))
   }
 
   render() {
@@ -22,7 +25,7 @@ export default class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+          <ResContainer reservations={this.state.reservations} />
         </div>
       </div>
     )
