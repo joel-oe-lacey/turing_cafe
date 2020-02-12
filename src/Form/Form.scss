@@ -1,4 +1,19 @@
 .form {
     height: 15%;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    input,
+    button {
+        height: 30%;
+        width: 15%;
+    }
+
+    button {
+        background-color: teal;
+        color: #FFFFFF;
+    }
 }
