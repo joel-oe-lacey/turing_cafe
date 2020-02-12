@@ -48,12 +48,25 @@ export default class App extends Component {
       })
   }
 
+  sortReservations = () => {
+    const reservationsDateInd = this.state.reservations.map(reservation => {
+      const divDate = reservation.date.split('/');
+
+      return {
+        ...reservation,
+        resDateInd: (parseInt(divDate[0]) * 60) + parseInt(divDate[1])
+      }
+    }).sort((a, b) => a.resDateInd - b.resDateInd)
+
+    this.setState({ reservations: reservationsDateInd })
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <Form addReservation={this.addReservation} />
-        <ResContainer reservations={this.state.reservations} deleteReservation={this.deleteReservation}/>
+        <ResContainer reservations={this.state.reservations} deleteReservation={this.deleteReservation} sortReservations={this.sortReservations}/>
       </div>
     )
   }
