@@ -8,7 +8,7 @@ export default class Form extends Component {
             name: '',
             date: '',
             time: '',
-            guestCount: ''
+            number: ''
         }
     }
 
