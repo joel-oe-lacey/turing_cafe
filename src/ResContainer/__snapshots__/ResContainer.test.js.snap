@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResContainer Should match snapshot 1`] = `
+<section
+  className="reservation-container"
+>
+  <Res
+    date="3/14"
+    id="3"
+    key="0"
+    name="Marvin"
+    number="7"
+    time="4"
+  />
+</section>
+`;
