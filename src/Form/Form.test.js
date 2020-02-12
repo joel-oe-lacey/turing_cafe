@@ -10,6 +10,14 @@ describe('Form', () => {
         number: '4'
     }
 
+    const mockSubmittedEvent = {
+        id: '1',
+        name: 'Ford',
+        date: '2/21',
+        time: '9',
+        number: '4'
+    }
+
     const mockEmptyState = {
         name: '',
         date: '',
@@ -18,6 +26,8 @@ describe('Form', () => {
     }
 
     it('Should return a reservation on form click', () => {
+        global.Date.now = jest.spyOn(global.Date, 'now').mockImplementation(() => '1')
+
         const addResMock = jest.fn();
         const wrapper = shallow(<Form addReservation={addResMock}/>);
         const mockEvent = { preventDefault: jest.fn() }
@@ -25,7 +35,7 @@ describe('Form', () => {
         wrapper.instance().setState(mockUserEntry)
         wrapper.find('button').simulate('click', mockEvent)
 
-        expect(addResMock).toHaveBeenCalledWith(mockUserEntry)
+        expect(addResMock).toHaveBeenCalledWith(mockSubmittedEvent)
     })
 
     it('Should update state on user input entry', () => {
