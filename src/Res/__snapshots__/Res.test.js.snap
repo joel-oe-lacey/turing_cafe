@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Res Should match snapshot 1`] = `
+<section
+  className="reservation"
+  key="1"
+>
+  <h3>
+    Arthur Dent
+  </h3>
+  <p>
+    8/13
+  </p>
+  <p>
+    8 PM
+  </p>
+  <p>
+    Number of Guests: 42
+  </p>
+  <button>
+    Cancel
+  </button>
+</section>
+`;
